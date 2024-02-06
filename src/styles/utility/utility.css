@@ -48,6 +48,15 @@
   max-inline-size: var(--content-measure);
 }
 
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.mono {
+  font-family: monospace;
+}
+
 .object-fit-cover {
   height: 100%;
   object-fit: cover;
@@ -69,7 +78,7 @@
 }
 
 /* === FOR DEBUGGING PURPOSES ONLY! === */
-/*
-* {
+
+/* * {
   background: rgb(0 100 0 / 0.05) !important;
 } */
