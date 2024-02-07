@@ -1,11 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro';
-
-const title = "Home Page";
 ---
 
-<Layout title={title}>
+<Layout title="astro-cube">
   <main>
     <article class="region prose wrapper hero">
       <h1>astro-cube</h1>
@@ -57,6 +54,11 @@ const title = "Home Page";
       </ul>
     </article>
 
-    <Footer />
+    <footer class="region prose wrapper">
+      See <a href="https://github.com/williamhzo/astro-cube">source code</a>,
+      contributions are welcome! <span role="img" aria-label="waving hand emoji"
+        >👋</span
+      >
+    </footer>
   </main>
 </Layout>
