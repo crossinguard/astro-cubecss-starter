@@ -1,26 +1,26 @@
 import { z, defineCollection } from 'astro:content';
 
-const eventsCollection = defineCollection({
+const blogCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
     pubDate: z.date(),
-    eventDate: z.date(),
+    updatedDate: z.date().optional(),
     description: z.string(),
   }),
 });
-const meetingsCollection = defineCollection({
+const tutorialsCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
     pubDate: z.date(),
-    meetingDate: z.date(),
+    updatedDate: z.date().optional(),
     description: z.string(),
   }),
 });
 
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-  events: eventsCollection,
-  meetings: meetingsCollection,
+  blog: blogCollection,
+  tutorials: tutorialsCollection,
 };

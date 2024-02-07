@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const allTutorials = await getCollection('tutorials');
+const title = "Tutorials"
+---
+
+<Layout title = {title}>
+  <article class="region prose wrapper hero">
+    <h1>{title}</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, veritatis repudiandae commodi accusantium reiciendis consequuntur ea consectetur placeat vitae repellendus laudantium, temporibus eaque quia quisquam id fugiat ex? Porro, odit.</p>
+  </article>
+  <article class="region prose wrapper ">
+    <h2>All Entries</h2>
+    <ul role="list" class="grid features">
+      {
+        allTutorials.map((event) => (
+          <li class="flow">
+            <a href={`/tutorials/${event.slug}/`}>
+              <h3 class="title">{event.data.title}</h3>
+              <p class="date"><FormattedDate date={event.data.pubDate} /></p>
+              <p class="description">{event.data.description}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+</Layout>

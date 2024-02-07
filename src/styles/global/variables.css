@@ -12,8 +12,8 @@
 
   /* Fonts */
 
-  --font-base: sans-serif;
-  --font-heading: monospace, serif;
+  --font-base: 'Atkinson', sans-serif;
+  --font-heading: 'Atkinson', serif;
   --font-weight-heading-1: 100;
   --font-weight-heading-2: 200;
   --font-weight-base: 400;

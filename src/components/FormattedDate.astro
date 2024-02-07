@@ -1,0 +1,20 @@
+---
+interface Props {
+	date: Date;
+}
+
+const { date } = Astro.props;
+
+const adjustedDate = new Date(date);
+adjustedDate.setHours(adjustedDate.getHours() + 8);
+---
+
+<time datetime={adjustedDate.toISOString()}>
+	{
+		adjustedDate.toLocaleDateString('en-us', {
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric',
+		})
+	}
+</time>

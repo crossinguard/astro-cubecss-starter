@@ -4,12 +4,12 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 interface Props {
-  entry: CollectionEntry<'meetings'>
+  entry: CollectionEntry<'blog'>
 }
 
 export async function getStaticPaths() {
-  const meetings = await getCollection('meetings');
-  return meetings.map((entry) => ({
+  const blog = await getCollection('blog');
+  return blog.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -21,8 +21,8 @@ const { Content } = await entry.render();
 
 <Layout title={entry.data.title} description={entry.data.description}>
   
-  <div class="content">
+  <article class="region prose wrapper">
     <Content />
-  </div>
+  </article>
 
 </Layout>
